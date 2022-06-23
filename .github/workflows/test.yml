@@ -17,19 +17,16 @@ jobs:
 
     steps:
     - run: sudo apt update && sudo apt install libpq-dev
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/checkout@v3
+    - run: pipx install poetry
+    - uses: actions/setup-python@v4
       with:
         python-version: "3.9"
-
+        cache: poetry
     - name: Install dependencies
-      run: |
-        pip install --upgrade pip poetry
-        POETRY_VIRTUALENVS_IN_PROJECT=true poetry install
-        echo ".venv/bin" >> $GITHUB_PATH
-
+      run: poetry install
     - name: Test
-      run: forge test
+      run: poetry run forge test
       env:
         DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
         DEBUG: true
