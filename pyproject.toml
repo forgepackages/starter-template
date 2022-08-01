@@ -6,6 +6,7 @@ authors = ["Dave Gaeddert <dave.gaeddert@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+Django = "^4.0.6"
 forge = "<1.0.0"
 
 [tool.poetry.dev-dependencies]
