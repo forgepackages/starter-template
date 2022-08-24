@@ -18,16 +18,16 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
 
-import views
-from users.views import MyAccountView, SignupView
+from users.views import MyAccountView
+from views import HomeView, SignupView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("signup/", SignupView.as_view(), name="signup"),
     path("my-account/", MyAccountView.as_view(), name="my_account"),
-    path("", include("django.contrib.auth.urls")),
     path("teams/", include("teams.urls")),
-    path("", views.HomeView.as_view(), name="home"),
+    path("", include("django.contrib.auth.urls")),
+    path("", HomeView.as_view(), name="home"),
 ]
 
 # Make the error pages viewable in development
