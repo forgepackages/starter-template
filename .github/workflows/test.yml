@@ -23,9 +23,7 @@ jobs:
       with:
         python-version: "3.9"
         cache: poetry
-    - run: |
-        poetry env use 3.9
-        poetry install
+    - run: poetry install
     - run: poetry run forge test
       env:
         DATABASE_URL: postgres://postgres:postgres@localhost:5432/postgres
