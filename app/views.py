@@ -9,11 +9,11 @@ from forms import SignupForm
 from teams.models import Team, TeamMembership, TeamRoles
 
 
-class BaseLoggedInView(LoginRequiredMixin, HTMLTitleMixin):
+class BaseLoggedInMixin(LoginRequiredMixin, HTMLTitleMixin):
     html_title_suffix = " | Built with Forge"
 
 
-class HomeView(BaseLoggedInView, TemplateView):
+class HomeView(BaseLoggedInMixin, TemplateView):
     html_title = "Home"
     template_name = "home.html"
 

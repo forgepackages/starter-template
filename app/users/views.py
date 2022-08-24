@@ -1,11 +1,11 @@
 from django.views.generic import UpdateView
 
-from views import BaseLoggedInView
+from views import BaseLoggedInMixin
 
 from .models import User
 
 
-class MyAccountView(BaseLoggedInView, UpdateView):
+class MyAccountView(BaseLoggedInMixin, UpdateView):
     html_title = "My account"
     model = User
     fields = ("username", "email", "first_name", "last_name")
