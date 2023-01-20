@@ -1,6 +1,6 @@
 from django.db import models
 
-from forge.models import TimestampModel, UUIDModel
+from models import TimestampModel, UUIDModel
 
 
 class Team(TimestampModel, UUIDModel):
