@@ -251,6 +251,7 @@ LOGGING = {
         "app": {
             "handlers": ["console"],
             "level": environ.get("APP_LOG_LEVEL", "INFO"),
+            "propagate": False,
         },
     },
 }
