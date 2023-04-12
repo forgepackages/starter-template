@@ -1,5 +1,4 @@
 from django.views.generic import UpdateView
-
 from views import BaseLoggedInMixin
 
 from .models import User

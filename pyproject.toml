@@ -28,8 +28,12 @@ forge-precommit = "^1.0.0"
 forge-db = "^1.0.0"
 
 [tool.ruff]
-# Never enforce `E501` (line length violations).
-ignore = ["E501"]
+ignore = [
+    "E501",  # Never enforce `E501` (line length violations).
+]
+extend-select = [
+    "I",  # Enable isort
+]
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
